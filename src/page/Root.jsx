@@ -7,7 +7,7 @@ export function Root(){
 	return (
 		<>
 			<Header/>
-			<div className="container">
+			<div style={{position:'relative'}} className="container">
 				<Outlet/>
 			</div>
 			<Footer/>

@@ -5,7 +5,7 @@ import { SectionSellCoffe } from "../../component/section-sell-coffe/sectionSell
 import { CardSellCoffe } from "../../component/card-sell-coffe/cardSellCoffe";
 import { useDispatch, useSelector } from "react-redux";
 import {
-	deliverey_coffe_value,
+  deliverey_coffe_value,
   delivery_coffee,
   grind_coffee,
   grind_coffee_value,
@@ -17,6 +17,8 @@ import {
   type_coffee_value,
 } from "../../Tools/reducer";
 import { Orded } from "../../component/Plan-commade-orded-/orded";
+import { CheickoutOrder } from "../../component/plan-checkout/cheickoutOrder";
+import { useState } from "react";
 export function Plan() {
   const dispatch = useDispatch();
   const OpenCardSumary = (e) => {
@@ -26,6 +28,13 @@ export function Plan() {
     );
     e.target.classList.add("card-active");
   };
+  const [displayCheickoutComponent, setdisplayCheickoutComponent] =
+    useState(false);
+  if(displayCheickoutComponent){
+	document.body.style.overflow = 'hidden'
+  }else{
+	document.body.style.overflow = ''
+  }
   return (
     <div className="container-plan">
       <section className="section-work">
@@ -119,7 +128,7 @@ export function Plan() {
                 "Compatible avec les systèmes Nespresso et les cafetières similaires"
               }
               response={"how_drink"}
-			  action={how_drink_value('Capsule')}
+              action={how_drink_value("Capsule")}
             />
             <CardSellCoffe
               title={"Filtre"}
@@ -127,7 +136,7 @@ export function Plan() {
                 "Pour les méthodes de versement ou d'égouttement comme Aeropress, Chemex et V60"
               }
               response={"how_drink"}
-              action={how_drink_value('Filtre')}
+              action={how_drink_value("Filtre")}
             />
             <CardSellCoffe
               title={"Espresso"}
@@ -135,7 +144,7 @@ export function Plan() {
                 "Des grains denses et finement moulus pour une expérience intense et savoureuse"
               }
               response={"how_drink"}
-              action={how_drink_value('Espresso')}
+              action={how_drink_value("Espresso")}
             />
           </SectionSellCoffe>
 
@@ -150,7 +159,7 @@ export function Plan() {
                 "Café distinctif et de haute qualité provenant d'une ferme familiale spécifique"
               }
               response={"type_coffee"}
-			  action={type_coffee_value('Origine unique')}
+              action={type_coffee_value("Origine unique")}
             />
             <CardSellCoffe
               title={"Café décaféiné"}
@@ -158,7 +167,7 @@ export function Plan() {
                 "Tout comme le café ordinaire, sauf que la caféine a été supprimée"
               }
               response={"type_coffee"}
-			  action={type_coffee_value('Café décaféiné')}
+              action={type_coffee_value("Café décaféiné")}
             />
             <CardSellCoffe
               title={"Mélangé"}
@@ -166,7 +175,7 @@ export function Plan() {
                 "Combinaison de deux ou trois grains de cafés biologiques torréfiés foncés"
               }
               response={"type_coffee"}
-			  action={type_coffee_value('Mélangé')}
+              action={type_coffee_value("Mélangé")}
             />
           </SectionSellCoffe>
 
@@ -181,7 +190,7 @@ export function Plan() {
                 "Perfect for the solo drinker. Yields about 12 delicious cups."
               }
               response={"how_much_coffee"}
-			  action={how_much_coffee_value('250g')}
+              action={how_much_coffee_value("250g")}
             />
             <CardSellCoffe
               title={"500g"}
@@ -189,7 +198,7 @@ export function Plan() {
                 "Option parfaite pour un couple. Donne environ 40 tasses délicieuses."
               }
               response={"how_much_coffee"}
-			  action={how_much_coffee_value('500g')}
+              action={how_much_coffee_value("500g")}
             />
             <CardSellCoffe
               title={"1000g"}
@@ -197,11 +206,11 @@ export function Plan() {
                 "Parfait pour les bureaux et les événements. Donne environ 90 délicieuses tasses."
               }
               response={"how_much_coffee"}
-			  action={how_much_coffee_value('1000g')}
+              action={how_much_coffee_value("1000g")}
             />
           </SectionSellCoffe>
 
-          <SectionSellCoffe
+          <SectionSellCoffe 
             id={"grind_coffe"}
             title={"Voulez vous qu'on les broie ? "}
             action={grind_coffee}
@@ -243,7 +252,7 @@ export function Plan() {
                 "7,20 $ par envoi. Comprend la livraison gratuite en première classe."
               }
               response={"delivery_coffee"}
-			  action={deliverey_coffe_value('Toutes les semaines')}
+              action={deliverey_coffe_value("Toutes les semaines")}
             />
             <CardSellCoffe
               title={"Toutes les 2 semaines"}
@@ -251,7 +260,7 @@ export function Plan() {
                 "9,60 $ par envoi. Comprend la livraison prioritaire gratuite."
               }
               response={"delivery_coffee"}
-			  action={deliverey_coffe_value('Toutes les 2 semaines')}
+              action={deliverey_coffe_value("Toutes les 2 semaines")}
             />
             <CardSellCoffe
               title={"Chaque mois"}
@@ -259,14 +268,17 @@ export function Plan() {
                 "12,00 $ par envoi. Comprend la livraison prioritaire gratuite."
               }
               response={"delivery_coffee"}
-			  action={deliverey_coffe_value('Chaque mois')}
+              action={deliverey_coffe_value("Chaque mois")}
             />
           </SectionSellCoffe>
         </div>
       </section>
-	  <section className="orded-result">
-		<Orded/>
-	  </section>
+      <section className="orded-result">
+        <Orded displayCheickout={setdisplayCheickoutComponent} />
+      </section>
+      {displayCheickoutComponent && (
+        <CheickoutOrder HidecheickoutComponent={setdisplayCheickoutComponent} />
+      )}
     </div>
   );
 }

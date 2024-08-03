@@ -6,11 +6,11 @@ export function CardSellCoffe({title , body, response,action}){
 	const Value = useSelector(state => state[response])
 	const handleValue = (e)=>{
 		dispatch(action)
-		const ParentElement = e.target.parentElement
+		const ParentElement = e.currentTarget.parentElement
 		Array.from(ParentElement.children).forEach((child) =>
       child.classList.remove("value_selected")
     );
-		e.target.classList.add('value_selected')
+		e.currentTarget.classList.add('value_selected')
 	}
 	return (
 		<div onClick={(e)=>handleValue(e)} className='card-sell-item'>

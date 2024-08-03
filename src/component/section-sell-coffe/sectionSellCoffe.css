@@ -2,12 +2,14 @@
   padding: 0 24px;
   margin-bottom: 110px;
 }
-
+.section-sell-item.disable {
+  pointer-events: none;
+  opacity: 0.5;
+}
 .button-title-arrow {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
-
 }
 .button-title-arrow strong {
   color: var(--grey);
@@ -34,7 +36,7 @@
   display: block;
 }
 @media only screen and (min-width: 768px) {
-   .card-sell-container.card-open {
+  .card-sell-container.card-open {
     display: flex;
     justify-content: space-between;
     align-items: center;
