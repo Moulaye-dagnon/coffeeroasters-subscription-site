@@ -107,9 +107,12 @@
   }
 
   .card-work {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+	grid-template-columns: repeat(3,1fr);
     text-align: start;
+  }
+  .Container-home .card-work-item::before{
+background-color: #fff;
   }
   .btn-work {
     margin: 64px 0 0;

@@ -42,6 +42,7 @@
 .cheickout_body-orded span {
   color: var(--dark-cyan);
   text-align: center;
+  margin: 0 5px;
 }
 .cheickout_body_small_text {
   color: var(--dar-grey-bleu);

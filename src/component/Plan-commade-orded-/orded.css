@@ -24,6 +24,7 @@
 .order_container_content .orded_container-body span {
   color: var(--dark-cyan);
   text-align: center;
+  margin: 0 5px;
 }
 .create_plan_button {
   

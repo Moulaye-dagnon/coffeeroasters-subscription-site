@@ -8,7 +8,6 @@ export function SectionSellCoffe({ id, title, children , action }) {
 	const OpenCard = useSelector(state => state[id])
 	const dispatch = useDispatch()
 	const ValueReducer = useSelector(state => state)
-	console.log(ValueReducer.how_drink.value);
   return (
     <div   className={`section-sell-item ${ValueReducer.how_drink.value == 'Capsule' && id == 'grind_coffe' ? 'disable' : ''}`}>
       <div onClick={()=>dispatch(action())} className="button-title-arrow">

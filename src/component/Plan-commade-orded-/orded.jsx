@@ -1,14 +1,26 @@
 import "./orded.css";
 import { useSelector } from "react-redux";
-export function Orded({displayCheickout}) {
+export function Orded({ displayCheickout }) {
   const Result = useSelector((state) => state);
-  const DisableButton =
-    Result.how_drink.value &&
-    Result.type_coffee.value &&
-    Result.how_much_coffee.value &&
-    Result.grind_coffe.value &&
-    Result.delivery_coffee.value ? false : true;
-	
+  let DisableButton = null;
+  if (Result.how_drink.value == "Capsule") {
+    DisableButton =
+      Result.how_drink.value &&
+      Result.type_coffee.value &&
+      Result.how_much_coffee.value &&
+      Result.delivery_coffee.value
+        ? false
+        : true;
+  } else {
+    DisableButton =
+      Result.how_drink.value &&
+      Result.type_coffee.value &&
+      Result.how_much_coffee.value &&
+      Result.grind_coffe.value &&
+      Result.delivery_coffee.value
+        ? false
+        : true;
+  }
   return (
     <div className="orded_container">
       <div className="order_container_content">
@@ -16,7 +28,7 @@ export function Orded({displayCheickout}) {
           Récapitulatif de la commande
         </strong>
         <p className="orded_container-body">
-          “Je bois mon café {Result.how_drink.value == 'Capsule' && 'en '} {" "}
+          “Je bois mon café {Result.how_drink.value == "Capsule" && "en "}{" "}
           <span>
             {Result.how_drink.value ? Result.how_drink.value : "____"}
           </span>{" "}
@@ -29,11 +41,17 @@ export function Orded({displayCheickout}) {
             {Result.how_much_coffee.value
               ? Result.how_much_coffee.value
               : "____"}
-          </span>{" "}
-          moulus à la{" "}
-          <span>
-            {Result.grind_coffe.value ? Result.grind_coffe.value : "____"}
           </span>
+          {Result.how_drink.value != "Capsule" ? (
+            <>
+              moulus à la
+              <span>
+                {Result.grind_coffe.value ? Result.grind_coffe.value : "____"}
+              </span>
+            </>
+          ) : (
+            ""
+          )}
           , envoyés chaque{" "}
           <span>
             {Result.delivery_coffee.value
@@ -44,7 +62,13 @@ export function Orded({displayCheickout}) {
         </p>
       </div>
       <div className="order_container_button">
-        <button onClick={()=>displayCheickout(v=> true)} disabled={DisableButton}  className="btn create_plan_button "   >Créer mon plan !</button>
+        <button
+          onClick={() => displayCheickout((v) => true)}
+          disabled={DisableButton}
+          className="btn create_plan_button "
+        >
+          Créer mon plan !
+        </button>
       </div>
     </div>
   );
