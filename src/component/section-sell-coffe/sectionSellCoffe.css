@@ -1,6 +1,7 @@
 .section-sell-item {
   padding: 0 24px;
   margin-bottom: 110px;
+  cursor: pointer;
 }
 .section-sell-item.disable {
   pointer-events: none;
@@ -34,6 +35,8 @@
 }
 .card-sell-container.card-open {
   display: block;
+  cursor: pointer;
+
 }
 @media only screen and (min-width: 768px) {
   .card-sell-container.card-open {

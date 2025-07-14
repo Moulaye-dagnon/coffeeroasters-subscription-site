@@ -20,6 +20,8 @@ const initialeState = {
     bol: false,
   },
 };
+
+// les preimere vconstante sont des bolean et comporte des valeur
  const HOW_DRINK_BOL = "HOW_DRINK_BOL";
  const HOW_DRINK_VALUE = "HOW_DRINK_VALUE";
 
