@@ -9,8 +9,9 @@ Ceci est une solution au [Coffeeroasters subscription site challenge on Frontend
   - [Capture d'ecran](#Captured'ecran)
   - [Liens](#Liens)
 - [Mon Processus](#my-process)
+
   - [Construit avec](#Construit avec)
- 
+
 - [Auteur](#Auteur)
 
 ## Aperçu
@@ -29,13 +30,12 @@ Les utilisateurs sont en mesure de:
 
 ### Liens
 
-- Solution URL: [Solution URl](https://github.com/Moulaye-dagnon/coffeeroasters-subscription-site/tree/master)
-- Live Site URL: [Add live site URL here](https://coffeeroasters-subscription-site-flax.vercel.app)
+- Solution URL: [Solution url](https://github.com/Moulaye-dagnon/coffeeroasters-subscription-site/tree/master)
+- Live Site URL: [site URL ](https://coffeeroasters-subscription-site-flax.vercel.app)
 
 ## Mon Processus
 
 ### Construit avec
-
 
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
@@ -43,12 +43,7 @@ Les utilisateurs sont en mesure de:
 - [Redux ](https://redux-toolkit.js.org/) - State management
 - [CSS](https://developer.mozilla.org/fr/docs/Web/CSS) - For styles
 
-
 ## Auteur
 
 - Frontend Mentor - [@Moulaye-dagnon](https://www.frontendmentor.io/profile/Moulaye-dagnon)
 - Linkedin - [@moulaye-amadou-dagnon](https://www.linkedin.com/in/moulaye-amadou-dagnon-07a224292/)
-
-
-
-
